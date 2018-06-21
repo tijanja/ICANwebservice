@@ -19,16 +19,16 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
  
 try
 {
-//	$params = $_REQUEST;
+	$params = $_REQUEST;
         
-  //      $controller = ucfirst(strtolower(trim($params['controller'])));
-//        $action = strtolower(trim($params['action']))."Action";
+        $controller = ucfirst(strtolower(trim($params['controller'])));
+        $action = strtolower(trim($params['action']))."Action";
 
-$obj1 = file_get_contents("php://input");
-echo $obj1;
-$obj = json_decode($obj1);
+//$obj1 = file_get_contents("php://input");
+//echo $obj1;
+//$obj = json_decode($obj1);
 
-echo file_get_contents("php://input");
+//echo file_get_contents("php://input");
 $controller = ucfirst(strtolower(trim($obj->controller)));
 $action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
