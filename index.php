@@ -1,9 +1,9 @@
 <?php
 try
 {
-	echo $params = $_REQUEST;
+	$params = $_REQUEST;
         
-        $controller = ucfirst(strtolower(trim($params['controller'])));
+        echo $controller = ucfirst(strtolower(trim($params['controller'])));
         $action = strtolower(trim($params['action']))."Action";
 
 if(file_exists("controller/{$controller}.php"))
