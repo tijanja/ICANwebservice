@@ -25,7 +25,7 @@ try
 //        $action = strtolower(trim($params['action']))."Action";
 
 echo $obj1 = fopen("php://input","r");
-$obj = json_decode(fget($obj1));
+$obj = json_decode(fgets($obj1));
 
 printf($obj);
 
