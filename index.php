@@ -1,7 +1,7 @@
 <?php
 try
 {
-	$params = $_REQUEST;
+	echo $params = $_REQUEST;
         
         $controller = ucfirst(strtolower(trim($params['controller'])));
         $action = strtolower(trim($params['action']))."Action";
