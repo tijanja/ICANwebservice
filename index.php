@@ -16,17 +16,20 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 
         exit(0); 
     }
-
+ 
 try
 {
-	$params = $_REQUEST;
+//	$params = $_REQUEST;
         
-        echo $obj1 = file_get_contents("php://input");
-        $obj = json_decode($obj1);
-        
-        $controller = ucfirst(strtolower(trim($params['controller'])));
-        $action = strtolower(trim($params['action']))."Action";
+  //      $controller = ucfirst(strtolower(trim($params['controller'])));
+//        $action = strtolower(trim($params['action']))."Action";
 
+$obj1 = file_get_contents("php://input");
+$obj = json_decode($obj1);
+
+//echo file_get_contents("php://input");
+$controller = ucfirst(strtolower(trim($obj->controller)));
+$action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
 {
 include_once "controller/{$controller}.php";
@@ -35,8 +38,7 @@ else
 {
 throw new Exception('Controller is invalid.');
 }
-
-$controller = new $controller($params);
+$controller = new $controller($obj);
 if(method_exists($controller, $action)===false)
 {
 throw new Exception('Action is invalid.');
@@ -62,3 +64,4 @@ $result['errormsg'] = $e->getMessage();
 //echo the result of the API call
 echo json_encode($result);
 exit();
+
