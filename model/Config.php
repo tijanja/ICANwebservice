@@ -19,6 +19,7 @@ class Config extends Connection {
     
     function saveReservation($param)
     {
+        $this->db->query("INSERT INTO request VALUES('','12345678','adetunji@gmail.com','08060774043','23b flat5')");
         return $param;
     }
 }
