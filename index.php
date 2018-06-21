@@ -21,16 +21,9 @@ try
 {
 	$params = $_REQUEST;
         
-        echo $controller = ucfirst(strtolower(trim($params['controller'])));
+        $controller = ucfirst(strtolower(trim($params['controller'])));
         $action = strtolower(trim($params['action']))."Action";
 
-//$obj1 = file_get_contents("php://input");
-//echo $obj1;
-//$obj = json_decode($obj1);
-
-//echo file_get_contents("php://input");
-//$controller = ucfirst(strtolower(trim($obj->controller)));
-//$action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
 {
 include_once "controller/{$controller}.php";
@@ -39,7 +32,8 @@ else
 {
 throw new Exception('Controller is invalid.');
 }
-$controller = new $controller($obj);
+
+$controller = new $controller($params);
 if(method_exists($controller, $action)===false)
 {
 throw new Exception('Action is invalid.');
