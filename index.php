@@ -27,7 +27,8 @@ try
 echo $obj1 = file_get_contents("php://input");
 $obj = json_decode($obj1);
 
-print_r($obj);
+printf($obj);
+
 
 //echo file_get_contents("php://input");
 $controller = ucfirst(strtolower(trim($obj->controller)));
