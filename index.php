@@ -20,7 +20,8 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
  
 try
 {
-//	$params = $_REQUEST;
+    $params = $_REQUEST;
+    print_r($params);	
         
   //      $controller = ucfirst(strtolower(trim($params['controller'])));
 //        $action = strtolower(trim($params['action']))."Action";
