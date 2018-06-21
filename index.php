@@ -24,8 +24,10 @@ try
   //      $controller = ucfirst(strtolower(trim($params['controller'])));
 //        $action = strtolower(trim($params['action']))."Action";
 
-echo $obj1 = fopen("php://input","r");
+echo $obj1 = file_get_contents("php://input");
 $obj = json_decode($obj1);
+
+print_r($obj);
 
 //echo file_get_contents("php://input");
 $controller = ucfirst(strtolower(trim($obj->controller)));
