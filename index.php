@@ -20,14 +20,14 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
  
 try
 {
-    $params = $_REQUEST;
-    print_r($params);	
+    //$params = $_REQUEST;
+    //print_r($params);	
         
   //      $controller = ucfirst(strtolower(trim($params['controller'])));
 //        $action = strtolower(trim($params['action']))."Action";
 
-$obj1 = fopen("php://input",'r');
-print_r($obj1); exit;
+$obj1 = file_get_contents("php://input",'r');
+
 $obj = json_decode($obj1);
 
 printf($obj);
