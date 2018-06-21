@@ -11,6 +11,14 @@
  *
  * @author tunjiakinde
  */
-class Config {
-    //put your code here
+class Config extends Connection {
+    
+    function __construct() {
+        parent::__construct();
+    }
+    
+    function saveReservation($param)
+    {
+        
+    }
 }

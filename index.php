@@ -25,6 +25,7 @@ try
 //        $action = strtolower(trim($params['action']))."Action";
 
 $obj1 = file_get_contents("php://input");
+echo $obj1;
 $obj = json_decode($obj1);
 
 //echo file_get_contents("php://input");

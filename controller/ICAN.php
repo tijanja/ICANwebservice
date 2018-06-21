@@ -12,5 +12,16 @@
  * @author tunjiakinde
  */
 class ICAN {
-    //put your code here
+    private $_params;
+    
+    function __construct($params)
+    {
+        $this->_params =$params;
+    }
+    
+    function saveAction()
+    {
+       $config = new Config(); 
+       return $config->saveReservation($this->_params);
+    }
 }
