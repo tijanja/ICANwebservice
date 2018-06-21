@@ -29,8 +29,8 @@ try
 //$obj = json_decode($obj1);
 
 //echo file_get_contents("php://input");
-$controller = ucfirst(strtolower(trim($obj->controller)));
-$action = strtolower(trim($obj->action))."Action";
+//$controller = ucfirst(strtolower(trim($obj->controller)));
+//$action = strtolower(trim($obj->action))."Action";
 if(file_exists("controller/{$controller}.php"))
 {
 include_once "controller/{$controller}.php";
