@@ -30,8 +30,6 @@ $obj1 = file_get_contents("php://input",'r');
 
 $obj = json_decode($obj1);
 
-printf($obj);
-
 
 //echo file_get_contents("php://input");
 $controller = ucfirst(strtolower(trim($obj->controller)));
