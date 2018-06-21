@@ -44,7 +44,7 @@ throw new Exception('Controller is invalid.');
 $controller = new $controller($obj);
 if(method_exists($controller, $action)===false)
 {
-throw new Exception('Action is invalid.');
+throw new Exception('Action is invalid.'); 
 }
 $return = $controller->$action();
 if($return !== FALSE)
